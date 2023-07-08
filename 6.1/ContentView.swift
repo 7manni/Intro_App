@@ -1,26 +1,124 @@
-//
-//  ContentView.swift
-//  6.1
-//
-//  Created by Abdulrahman Atta on 06/07/2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab = 1
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TabView(selection: $selectedTab) {
+                // Page 1 (Abdulrahman)
+                VStack {
+                    // Part 1: Top part
+                    ZStack {
+                        RadialGradient(colors: [Color(#colorLiteral(red: 0.10406332463026047, green: 1.014790654182434, blue: 0.36642885208129883, alpha: 1.0)), Color(#colorLiteral(red: 0.3675295114517212, green: 0.28984493017196655, blue: 1.0388718843460083, alpha: 1.0))], center: .center, startRadius: 0, endRadius: 300)
+                            .opacity(0.8)
+                            .blur(radius: 50)
+                            .frame(width: 350, height: 350)
+                            .clipShape(Circle())
+                        
+                        VStack(spacing: 20) {
+                            Image("7manni")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 250, height: 250)
+                                .clipShape(Circle())
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Abdulrahman Atta")
+                                    .font(.system(size: 20))
+                                    .bold()
+                                    .foregroundColor(.blue)
+                                
+                                Text("HS Student")
+                                    .font(.system(size: 15))
+                                    .bold()
+                                    .foregroundColor(.blue)
+                            }
+                            .padding(.bottom, 20)
+                        }
+                        .padding(30)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                    // Part 2: Link to Apple website
+                    VStack {
+                        Link(destination: URL(string: "https://www.apple.com")!) {
+                            HStack {
+                                Text("Apple")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(.yellow)
+                                
+                                Image(systemName: "applelogo")
+                                    .font(.system(size: 60))
+                                    .foregroundColor(.yellow)
+                                    .padding(8)
+                                    .clipShape(Circle())
+                            }
+                        }
+                    }
+                    
+                    // Part 3: Navigation bar
+                    Spacer()
+                    
+                    HStack {
+                        Button(action: {
+                            selectedTab = 1
+                        }) {
+                            VStack {
+                                Image(systemName: selectedTab == 1 ? "person.fill" : "person")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(selectedTab == 1 ? .white : .gray)
+                                
+                                Text("Abdulrahman")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(selectedTab == 1 ? .white : .gray)
+                            }
+                        }
+                        .padding()
+                        
+                        Button(action: {
+                            selectedTab = 2
+                        }) {
+                            VStack {
+                                Image(systemName: selectedTab == 2 ? "person.fill" : "person")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(selectedTab == 2 ? .white : .gray)
+                                
+                                Text("Shahed")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(selectedTab == 2 ? .white : .gray)
+                            }
+                        }
+                        .padding()
+                    }
+                    
+                    Spacer()
+                }
+                .tag(1)
+                
+                // Page 2 (Shahed)
+                VStack {
+                    Spacer()
+                    
+                    Text("My name is Shahed")
+                        .font(.title)
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                }
+                .tag(2)
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+static var previews: some View {
+ContentView()
+}
 }
