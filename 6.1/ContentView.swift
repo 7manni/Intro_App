@@ -4,10 +4,14 @@ struct ContentView: View {
     @State private var selectedTab = 1
     
     var body: some View {
+        
         VStack {
+            
             TabView(selection: $selectedTab) {
+                
                 // Page 1 (Abdulrahman)
                 VStack {
+                    
                     // Part 1: Top part
                     ZStack {
                         RadialGradient(colors: [Color(#colorLiteral(red: 0.10406332463026047, green: 1.014790654182434, blue: 0.36642885208129883, alpha: 1.0)), Color(#colorLiteral(red: 0.3675295114517212, green: 0.28984493017196655, blue: 1.0388718843460083, alpha: 1.0))], center: .center, startRadius: 0, endRadius: 300)
@@ -27,18 +31,19 @@ struct ContentView: View {
                                 Text("Abdulrahman Atta")
                                     .font(.system(size: 20))
                                     .bold()
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.yellow)
                                 
-                                Text("University Alumni")
+                                Text("RIT Alumni")
                                     .font(.system(size: 15))
                                     .bold()
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.yellow)
                             }
                             .padding(.bottom, 20)
                         }
                         .padding(30)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
                     
                     VStack {
                         Link(destination: URL(string: "https://www.apple.com")!) {
@@ -55,12 +60,15 @@ struct ContentView: View {
                         }
                     }
                 }
+                
                 .tag(1)
                 
                 // Page 2 (Shahed)
                 VStack {
+                    
                     // Part 1: Top part
                     ZStack {
+                        
                         RadialGradient(colors: [Color(#colorLiteral(red: 0.10406332463026047, green: 1.014790654182434, blue: 0.36642885208129883, alpha: 1.0)), Color(#colorLiteral(red: 0.3675295114517212, green: 0.28984493017196655, blue: 1.0388718843460083, alpha: 1.0))], center: .center, startRadius: 0, endRadius: 300)
                             .opacity(0.8)
                             .blur(radius: 50)
@@ -68,32 +76,49 @@ struct ContentView: View {
                             .clipShape(Circle())
                         
                         VStack(spacing: 20) {
-                            Image("yourImageName")
+                            Image("shahed")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 250, height: 250)
                                 .clipShape(Circle())
                             
                             VStack(alignment: .leading, spacing: 10) {
-                                Text("Shahed")
+                                Text("Shahed Elhdad")
                                     .font(.system(size: 20))
                                     .bold()
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.black)
                                 
-                                Text("HS Graduate")
+                                Text("UOS Alumni")
                                     .font(.system(size: 15))
                                     .bold()
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.black)
                             }
                             .padding(.bottom, 20)
                         }
                         .padding(30)
                     }
+                    VStack {
+                        Link(destination: URL(string: "https://www.instagram.com")!) {
+                            HStack {
+                                Text("Instagram")
+                                    .font(.system(size: 25))
+                                    .foregroundColor(.black)
+                                Image("insta")
+                                    .font(.system(size: 10))
+                                    .foregroundColor(.black)
+                                    .padding(6)
+                                    .clipShape(Circle())
+                            }
+                        }
+                    }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                
                 .tag(2)
             }
+            
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
             
             Spacer()
             
@@ -108,11 +133,11 @@ struct ContentView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
-                            .foregroundColor(selectedTab == 1 ? .white : .gray)
+                            .foregroundColor(selectedTab == 1 ? .white : .black)
                         
                         Text("Abdulrahman")
                             .font(.system(size: 12))
-                            .foregroundColor(selectedTab == 1 ? .white : .gray)
+                            .foregroundColor(selectedTab == 1 ? .white : .black)
                     }
                 }
                 .padding()
@@ -128,11 +153,11 @@ struct ContentView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
-                            .foregroundColor(selectedTab == 2 ? .white : .gray)
+                            .foregroundColor(selectedTab == 2 ? .white : .black)
                         
                         Text("Shahed")
                             .font(.system(size: 12))
-                            .foregroundColor(selectedTab == 2 ? .white : .gray)
+                            .foregroundColor(selectedTab == 2 ? .white : .black)
                     }
                 }
                 .padding()
@@ -141,6 +166,7 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        .background(Gradient(colors: [.indigo, .purple]))
     }
 }
 
