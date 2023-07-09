@@ -98,7 +98,7 @@ struct ContentView: View {
                         .padding(30)
                     }
                     VStack {
-                        Link(destination: URL(string: "https://www.instagram.com")!) {
+                        Link(destination: URL(string: "https://www.instagram.com/sh.allhdadd/?hl=en")!) {
                             HStack {
                                 Text("Instagram")
                                     .font(.system(size: 25))
