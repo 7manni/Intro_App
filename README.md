@@ -21,6 +21,6 @@ To run the project locally, follow these steps:
 3. Open the project in Xcode.
 4. Build and run the project using the Xcode simulator or a connected iOS device.
 
-If you have any questions or suggestions, please feel free to reach out.
+If you have any questions or suggestions, please feel free to reach out. (a loom video explaining the app will be uploaded)
 
 Happy coding!
